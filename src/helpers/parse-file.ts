@@ -2,6 +2,10 @@ import * as fileHandler from './filehandler';
 import { Developer, ProjectManager } from '../model/class';
 import { PageData } from '../model/page-data.class';
 
+/**
+ * This Function parses the file and returns the output in the object of the PageData Class
+ * @param fileName The Name of the Input File
+ */
 export const getFileData = (fileName: string) => {
 	const fileContents = fileHandler
 		.readFile(fileName)

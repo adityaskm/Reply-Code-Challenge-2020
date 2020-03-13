@@ -1,24 +1,27 @@
 import { Developer, CompanyMap, ProjectManager } from './class';
 
+/**
+ * We Define a CLass named Page Data to hold the data of our Input File.
+ */
 export class PageData {
-	metaData: MetaData = { W: 0, H: 0 };
+	officeDimensions: OfficeDimensions = { W: 0, H: 0 };
 	developers: Developer[] = [];
 	projectManagers: ProjectManager[] = [];
 	companyMap: CompanyMap = [];
 	constructor(
-		metaData: MetaData,
+		officeDimensions: OfficeDimensions,
 		developers: Developer[],
 		projectManagers: ProjectManager[],
 		companyMap: CompanyMap
 	) {
-		this.metaData = metaData;
+		this.officeDimensions = officeDimensions;
 		this.developers = developers;
 		this.projectManagers = projectManagers;
 		this.companyMap = companyMap;
 	}
 }
 
-export interface MetaData {
+export interface OfficeDimensions {
 	W: number;
 	H: number;
 }
