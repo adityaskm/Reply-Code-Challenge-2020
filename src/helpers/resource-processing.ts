@@ -71,10 +71,6 @@ const getFirstAvailablePlace = (data: PageData) => {
 	}
 };
 
-// const getUnplacedResources = (data: PageData) => {
-// 	return [...data.developers, ...data.projectManagers].filter(resource => !resource.placed);
-// };
-
 const calculatePotentialMaxResource = (resource: Resource, data: PageData, type: 'MANAGER' | 'DEVELOPER') => {
 	const availableResources =
 		type === 'DEVELOPER'
@@ -138,6 +134,7 @@ const placeAdjacentResources = (i: number, j: number, data: PageData) => {
 
 const getResourceIndex = (resource: Resource, data: PageData) => {
 	let indices = ['X'];
+	// We use array.some for stopping the loop. We can also use For Loop instead of forEach
 	const result = data.companyMap.some((row, i) =>
 		row.some((cell, j) => {
 			if (cell === resource) {
@@ -168,7 +165,7 @@ export const processPage = (data: PageData) => {
 	}
 };
 
-export const getIndices = (data: PageData) => {
+export const placeResources = (data: PageData) => {
 	processPage(data);
 	return [...data.developers, ...data.projectManagers].map(
 		resource =>
@@ -176,6 +173,5 @@ export const getIndices = (data: PageData) => {
 				.reverse()
 				.toString()
 				.toString()
-		// .replace("', '", "', \n'")
 	);
 };
