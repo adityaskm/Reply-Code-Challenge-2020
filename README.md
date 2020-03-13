@@ -32,7 +32,7 @@ This will place the output in the `outputs/` folder in a file with the same name
  * [Aditya Mudgerikar](https://github.com/adityaskm)
  * [Nebula Zero](https://github.com/atharvaK2)
  * [Vijay Dahiphale](https://github.com/vijaydahiphale96)
- * [Sudharma](https://github.com/sara9521)
+ <!-- * [Sudharma](https://github.com/sara9521) -->
 
 ## License
 
