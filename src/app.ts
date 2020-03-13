@@ -19,4 +19,4 @@ const start = (fileName: string, debug?: boolean) => {
 };
 
 const inputFile = 'c_soup.txt';
-start(inputFile, true);
+start(inputFile);

@@ -1,40 +1,20 @@
 import { Resource, Developer, CompanyMap } from '../model/class';
 import { PageData } from '../model/page-data.class';
 
-const getCommonAndUniqueArrayElements = (arr1: string[], arr2: string[]) => {
-	const common = [];
-	const unique = [];
-	let i = 0;
-	let j = 0;
-	let k = 0;
-	const n1 = arr1.length;
-	const n2 = arr2.length;
-	while (i < n1 && j < n2) {
-		if (arr1[i] < arr2[j]) {
-			unique.push(arr1[i]);
-			i = i + 1;
-			k = k + 1;
-		} else if (arr2[j] < arr1[i]) {
-			unique.push(arr2[j]);
-			k = k + 1;
-			j = j + 1;
-		} else {
-			common.push(arr1[i]);
-			i = i + 1;
-			j = j + 1;
-		}
-	}
-	while (i < n1) {
-		unique.push(arr1[i]);
-		i = i + 1;
-		k = k + 1;
-	}
-	while (j < n2) {
-		unique.push(arr2[j]);
-		j = j + 1;
-		k = k + 1;
-	}
-	return [common, unique];
+const getCommonElementsOfArray = (array1: any[], array2: any[]) => {
+	return [...array1, ...array2]
+		.filter((element, index, array) => array.indexOf(element) === index)
+		.filter(element => array1.includes(element) && array2.includes(element));
+};
+
+const getDifferentElements = (array1: any[], array2: any[]) => {
+	return [...array1, ...array2]
+		.filter((element, index, array) => array.indexOf(element) === index)
+		.filter(
+			element =>
+				!(array1.includes(element) && array2.includes(element)) &&
+				(array1.includes(element) || array2.includes(element))
+		);
 };
 
 /**
@@ -42,7 +22,8 @@ const getCommonAndUniqueArrayElements = (arr1: string[], arr2: string[]) => {
  */
 const calculateWorkPotential = (resource1: Resource, resource2: Resource) => {
 	if ('skills' in resource1 && 'skills' in resource2) {
-		const [commonSkills, differentSkills] = getCommonAndUniqueArrayElements(resource1.skills, resource2.skills);
+		const commonSkills = getCommonElementsOfArray(resource1.skills, resource2.skills);
+		const differentSkills = getDifferentElements(resource1.skills, resource2.skills);
 		return commonSkills.length * differentSkills.length;
 	} else {
 		return 0;
