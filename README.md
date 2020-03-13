@@ -1,6 +1,6 @@
 # Reply Code Challenge 2020
 
-This is our attempt of the solution for the Reply Code Challenge 2020. We use a Greedy Strategy to get the Solution within the Time Bounds.
+This is our attempt of the solution for the [Reply Code Challenge 2020](https://challenges.reply.com/tamtamy/challenge/code-standard-externals2020/detail). We use a Greedy Strategy to get the Solution within the Time Bounds.
 
 
 ## Getting Started
