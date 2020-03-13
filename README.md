@@ -16,7 +16,7 @@ Download or Clone this Repo. `cd` into it. Then run the following commands
 npm i
 npm start
 ```
-To Get the Output, place the input file(s) in `input/` and set the File Name in `const fileName` in  `src/app.ts` and run.
+To Get the Output, place the input file(s) in `input/` and set the File Name in `const inputFile` in  `src/app.ts` and run.
 ```
 npm start
 ```
