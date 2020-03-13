@@ -18,5 +18,5 @@ const start = (fileName: string, debug?: boolean) => {
 	console.log('data', data, JSON.stringify(data.companyMap));
 };
 
-const inputFile = 'c_soup.txt';
+const inputFile = 'a_solar.txt';
 start(inputFile);
