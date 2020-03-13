@@ -17,10 +17,6 @@ const getDifferentElements = (array1: any[], array2: any[]) => {
 		);
 };
 
-const getCommonCompanyResource = (resource: Resource, resources: Resource[]) => {
-	return resources.filter(res => res !== resource && res.company === resource.company);
-};
-
 const calculateWorkPotential = (resource1: Resource, resource2: Resource) => {
 	if ('skills' in resource1 && 'skills' in resource2) {
 		const commonSkills = getCommonElementsOfArray(resource1.skills, resource2.skills);
@@ -92,9 +88,9 @@ const calculatePotentialMaxResource = (resource: Resource, data: PageData, type:
 	}
 };
 
-const checkIfCompanyMapPositionOpen = (i: number, j: number, companymap: CompanyMap) => {
-	return typeof companymap[i][j] === 'string' && ['_', 'M'].includes(companymap[i][j] as any)
-		? (companymap[i][j] as string)
+const checkIfCompanyMapPositionOpen = (i: number, j: number, companyMap: CompanyMap) => {
+	return typeof companyMap[i][j] === 'string' && ['_', 'M'].includes(companyMap[i][j] as any)
+		? (companyMap[i][j] as string)
 		: false;
 };
 
@@ -167,11 +163,10 @@ export const processPage = (data: PageData) => {
 
 export const placeResources = (data: PageData) => {
 	processPage(data);
-	return [...data.developers, ...data.projectManagers].map(
-		resource =>
-			getResourceIndex(resource, data)
-				.reverse()
-				.toString()
-				.toString()
+	return [...data.developers, ...data.projectManagers].map(resource =>
+		getResourceIndex(resource, data)
+			.reverse()
+			.toString()
+			.toString()
 	);
 };

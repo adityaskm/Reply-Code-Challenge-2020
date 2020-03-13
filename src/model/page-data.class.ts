@@ -1,4 +1,4 @@
-import { Developer, CompanyMap, ProjectManager, Resource } from './class';
+import { Developer, CompanyMap, ProjectManager } from './class';
 
 export class PageData {
 	metaData: MetaData = { W: 0, H: 0 };

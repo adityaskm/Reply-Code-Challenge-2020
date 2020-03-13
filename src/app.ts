@@ -11,5 +11,5 @@ const start = (fileName: string, debug?: boolean) => {
 	fileHandler.writeFile(fileName, getOutputBuffer(data));
 };
 
-const fileName = 'a_solar.txt';
-start(fileName);
+const inputFile = 'a_solar.txt';
+start(inputFile);
